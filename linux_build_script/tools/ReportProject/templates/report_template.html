@@ -1,0 +1,657 @@
+<meta charset="utf-8">
+<html align="left">
+<head>
+    <title>TestReport</title>
+    <style type="text/css" media="screen">
+        body {
+            font-family: verdana, arial, helvetica, sans-serif;
+            font-size: 80%;
+        }
+        table {
+            font-size: 100%;
+        }
+        #result_table_linux_null {
+            width: 90%;
+            border-collapse: collapse;
+            border: 1px solid #777;
+        }
+        #result_table_linux_openvino {
+            width: 90%;
+            border-collapse: collapse;
+            border: 1px solid #777;
+        }
+        #result_table_linux_onednn {
+            width: 90%;
+            border-collapse: collapse;
+            border: 1px solid #777;
+        }
+        #result_table_linux_xnnpack {
+            width: 90%;
+            border-collapse: collapse;
+            border: 1px solid #777;
+        }
+        #result_table_windows_null {
+            width: 90%;
+            border-collapse: collapse;
+            border: 1px solid #777;
+        }
+        #result_table_windows_openvino {
+            width: 90%;
+            border-collapse: collapse;
+            border: 1px solid #777;
+        }
+        #result_table_windows_dml {
+            width: 90%;
+            border-collapse: collapse;
+            border: 1px solid #777;
+        }
+        #result_table_windows_onednn {
+            width: 90%;
+            border-collapse: collapse;
+            border: 1px solid #777;
+        }
+        #header_row_linux_null {
+            font-weight: bold;
+            color: white;
+            background-color: #777;
+        }
+        #header_row_linux_openvino {
+            font-weight: bold;
+            color: white;
+            background-color: #777;
+        }
+        #header_row_linux_onednn {
+            font-weight: bold;
+            color: white;
+            background-color: #777;
+        }
+        #header_row_linux_xnnpack {
+            font-weight: bold;
+            color: white;
+            background-color: #777;
+        }
+        #header_row_windows_null {
+            font-weight: bold;
+            color: white;
+            background-color: #777;
+        }
+        #header_row_windows_openvino {
+            font-weight: bold;
+            color: white;
+            background-color: #777;
+        }
+        #header_row_windows_dml {
+            font-weight: bold;
+            color: white;
+            background-color: #777;
+        }
+        #header_row_windows_onednn {
+            font-weight: bold;
+            color: white;
+            background-color: #777;
+        }
+        #result_table_linux_null td {
+            border: 1px solid #777;
+            padding: 2px;
+        }
+        #result_table_linux_openvino td {
+            border: 1px solid #777;
+            padding: 2px;
+        }
+        #result_table_linux_onednn td {
+            border: 1px solid #777;
+            padding: 2px;
+        }
+        #result_table_linux_xnnpack td {
+            border: 1px solid #777;
+            padding: 2px;
+        }
+        #result_table_windows_null td {
+            border: 1px solid #777;
+            padding: 2px;
+        }
+        #result_table_windows_openvino td {
+            border: 1px solid #777;
+            padding: 2px;
+        }
+        #result_table_windows_dml td {
+            border: 1px solid #777;
+            padding: 2px;
+        }
+        #result_table_windows_onednn td {
+            border: 1px solid #777;
+            padding: 2px;
+        }
+        .failClass {
+            background-color: default;
+        }
+    </style>
+</head>
+<h2>Test Report Summary</h2>
+<br></br>
+<h3>Environments</h3>
+<ul>
+    <li>
+        <p>Commit ID:
+            <a href={{href_info_html}} target="_blank">{{commit_id_html}}</a>
+        </p>
+    </li>
+</ul>
+<ul>
+    <li>
+        <p>Device Information:
+            {{device_information}}
+        </p>
+    </li>
+</ul>
+<br></br>
+<body>
+    <h3>Linux</h3>
+    <table border="1" width="40%" cellspacing="0" cellpadding="0">
+        <tr>
+            <th>Backend</th>
+            <th>Component</th>
+            <th>Result</th>
+        </tr>
+        {% for item_result_count_dic in backend_os_result_count_list_html %}
+        {% for item_result_count in item_result_count_dic %}
+        {% if item_result_count == "null_linux_result_count_html" %}
+        <tr align="center">
+            <td>null</td>
+            <td>UnitTests</td>
+            <td>{{item_result_count_dic[item_result_count]}}</td>
+        </tr>
+        {% endif %}
+        {% endfor %}
+        {% endfor %}
+        {% for item_result_count_dic in backend_os_result_count_list_html %}
+        {% for item_result_count in item_result_count_dic %}
+        {% if item_result_count == "openvino_linux_result_count_html" %}
+        <tr align="center">
+            <td>openvino</td>
+            <td>End2EndTests</td>
+            <td>{{item_result_count_dic[item_result_count]}}</td>
+        </tr>
+        {% endif %}
+        {% endfor %}
+        {% endfor %}
+        {% for item_result_count_dic in backend_os_result_count_list_html %}
+        {% for item_result_count in item_result_count_dic %}
+        {% if item_result_count == "openvino_linux_examples_result_count_html" %}
+        <tr align="center">
+            <td>openvino</td>
+            <td>Examples</td>
+            <td>{{item_result_count_dic[item_result_count]}}</td>
+        </tr>
+        {% endif %}
+        {% endfor %}
+        {% endfor %}
+        {% for item_result_count_dic in backend_os_result_count_list_html %}
+        {% for item_result_count in item_result_count_dic %}
+        {% if item_result_count == "openvino_linux_nodetest_result_count_html" %}
+        <tr align="center">
+            <td>openvino</td>
+            <td>NodeTest</td>
+            <td>{{item_result_count_dic[item_result_count]}}</td>
+        </tr>
+        {% endif %}
+        {% endfor %}
+        {% endfor %}
+        {% for item_result_count_dic in backend_os_result_count_list_html %}
+        {% for item_result_count in item_result_count_dic %}
+        {% if item_result_count == "onednn_linux_result_count_html" %}
+        <tr align="center">
+            <td>onednn</td>
+            <td>End2EndTests</td>
+            <td>{{item_result_count_dic[item_result_count]}}</td>
+        </tr>
+        {% endif %}
+        {% endfor %}
+        {% endfor %}
+        {% for item_result_count_dic in backend_os_result_count_list_html %}
+        {% for item_result_count in item_result_count_dic %}
+        {% if item_result_count == "onednn_linux_examples_result_count_html" %}
+        <tr align="center">
+            <td>onednn</td>
+            <td>Examples</td>
+            <td>{{item_result_count_dic[item_result_count]}}</td>
+        </tr>
+        {% endif %}
+        {% endfor %}
+        {% endfor %}
+        {% for item_result_count_dic in backend_os_result_count_list_html %}
+        {% for item_result_count in item_result_count_dic %}
+        {% if item_result_count == "onednn_linux_nodetest_result_count_html" %}
+        <tr align="center">
+            <td>onednn</td>
+            <td>NodeTest</td>
+            <td>{{item_result_count_dic[item_result_count]}}</td>
+        </tr>
+        {% endif %}
+        {% endfor %}
+        {% endfor %}
+        {% for item_result_count_dic in backend_os_result_count_list_html %}
+        {% for item_result_count in item_result_count_dic %}
+        {% if item_result_count == "xnnpack_linux_result_count_html" %}
+        <tr align="center">
+            <td>xnnpack</td>
+            <td>End2EndTests</td>
+            <td>{{item_result_count_dic[item_result_count]}}</td>
+        </tr>
+        {% endif %}
+        {% endfor %}
+        {% endfor %}
+        {% for item_result_count_dic in backend_os_result_count_list_html %}
+        {% for item_result_count in item_result_count_dic %}
+        {% if item_result_count == "xnnpack_linux_examples_result_count_html" %}
+        <tr align="center">
+            <td>xnnpack</td>
+            <td>Examples</td>
+            <td>{{item_result_count_dic[item_result_count]}}</td>
+        </tr>
+        {% endif %}
+        {% endfor %}
+        {% endfor %}
+        {% for item_result_count_dic in backend_os_result_count_list_html %}
+        {% for item_result_count in item_result_count_dic %}
+        {% if item_result_count == "xnnpack_linux_nodetest_result_count_html" %}
+        <tr align="center">
+            <td>xnnpack</td>
+            <td>NodeTest</td>
+            <td>{{item_result_count_dic[item_result_count]}}</td>
+        </tr>
+        {% endif %}
+        {% endfor %}
+        {% endfor %}
+    </table>
+    <br></br>
+    <h3>Windows</h3>
+    <table border="1" width="40%" cellspacing="0" cellpadding="0">
+        <tr>
+            <th>Backend</th>
+            <th>Component</th>
+            <th>Result</th>
+        </tr>
+        {% for item_result_count_dic in backend_os_result_count_list_html %}
+        {% for item_result_count in item_result_count_dic %}
+        {% if item_result_count == "null_win_result_count_html" %}
+        <tr align="center">
+            <td>null</td>
+            <td>UnitTests</td>
+            <td>{{item_result_count_dic[item_result_count]}}</td>
+        </tr>
+        {% endif %}
+        {% endfor %}
+        {% endfor %}
+        {% for item_result_count_dic in backend_os_result_count_list_html %}
+        {% for item_result_count in item_result_count_dic %}
+        {% if item_result_count == "openvino_win_result_count_html" %}
+        <tr align="center">
+            <td>openvino</td>
+            <td>End2EndTests</td>
+            <td>{{item_result_count_dic[item_result_count]}}</td>
+        </tr>
+        {% endif %}
+        {% endfor %}
+        {% endfor %}
+        {% for item_result_count_dic in backend_os_result_count_list_html %}
+        {% for item_result_count in item_result_count_dic %}
+        {% if item_result_count == "openvino_win_examples_result_count_html" %}
+        <tr align="center">
+            <td>openvino</td>
+            <td>Examples</td>
+            <td>{{item_result_count_dic[item_result_count]}}</td>
+        </tr>
+        {% endif %}
+        {% endfor %}
+        {% endfor %}
+        {% for item_result_count_dic in backend_os_result_count_list_html %}
+        {% for item_result_count in item_result_count_dic %}
+        {% if item_result_count == "openvino_win_nodetest_result_count_html" %}
+        <tr align="center">
+            <td>openvino</td>
+            <td>NodeTest</td>
+            <td>{{item_result_count_dic[item_result_count]}}</td>
+        </tr>
+        {% endif %}
+        {% endfor %}
+        {% endfor %}
+        {% for item_result_count_dic in backend_os_result_count_list_html %}
+        {% for item_result_count in item_result_count_dic %}
+        {% if item_result_count == "onednn_win_result_count_html" %}
+        <tr align="center">
+            <td>onednn</td>
+            <td>End2EndTests</td>
+            <td>{{item_result_count_dic[item_result_count]}}</td>
+        </tr>
+        {% endif %}
+        {% endfor %}
+        {% endfor %}
+        {% for item_result_count_dic in backend_os_result_count_list_html %}
+        {% for item_result_count in item_result_count_dic %}
+        {% if item_result_count == "onednn_win_examples_result_count_html" %}
+        <tr align="center">
+            <td>onednn</td>
+            <td>Examples</td>
+            <td>{{item_result_count_dic[item_result_count]}}</td>
+        </tr>
+        {% endif %}
+        {% endfor %}
+        {% endfor %}
+        {% for item_result_count_dic in backend_os_result_count_list_html %}
+        {% for item_result_count in item_result_count_dic %}
+        {% if item_result_count == "onednn_win_nodetest_result_count_html" %}
+        <tr align="center">
+            <td>onednn</td>
+            <td>NodeTest</td>
+            <td>{{item_result_count_dic[item_result_count]}}</td>
+        </tr>
+        {% endif %}
+        {% endfor %}
+        {% endfor %}
+        {% for item_result_count_dic in backend_os_result_count_list_html %}
+        {% for item_result_count in item_result_count_dic %}
+        {% if item_result_count == "dml_win_result_count_html" %}
+        <tr align="center">
+            <td>dml</td>
+            <td>End2EndTests</td>
+            <td>{{item_result_count_dic[item_result_count]}}</td>
+        </tr>
+        {% endif %}
+        {% endfor %}
+        {% endfor %}
+        {% for item_result_count_dic in backend_os_result_count_list_html %}
+        {% for item_result_count in item_result_count_dic %}
+        {% if item_result_count == "dml_win_examples_result_count_html" %}
+        <tr align="center">
+            <td>dml</td>
+            <td>Examples</td>
+            <td>{{item_result_count_dic[item_result_count]}}</td>
+        </tr>
+        {% endif %}
+        {% endfor %}
+        {% endfor %}
+        {% for item_result_count_dic in backend_os_result_count_list_html %}
+        {% for item_result_count in item_result_count_dic %}
+        {% if item_result_count == "dml_win_nodetest_result_count_html" %}
+        <tr align="center">
+            <td>dml</td>
+            <td>NodeTest</td>
+            <td>{{item_result_count_dic[item_result_count]}}</td>
+        </tr>
+        {% endif %}
+        {% endfor %}
+        {% endfor %}
+    </table>
+    <br></br>
+    <h3>Linux Failure</h3>
+    {% for item_result_count_dic in backend_os_result_count_list_html %}
+    {% for item_result_count in item_result_count_dic %}
+    {% if (item_result_count == "null_linux_result_count_html") and (item_result_count_dic[item_result_count].split("/")[0] != item_result_count_dic[item_result_count].split("/")[1]) %}
+    <h4>null</h4>
+    <table id="result_table_linux_null">
+        <colgroup>
+            <col align="left" />
+            <col align="right" />
+            <col align="right" />
+            <col align="right" />
+            <col align="right" />
+            <col align="right" />
+        </colgroup>
+        <tr id="header_row_linux_null">
+            <td>Component</td>
+            <td>TestCase</td>
+            <td>Note</td>
+        </tr>
+        {% endif %}
+        {% endfor %}
+        {% endfor %}
+        {% for item_fail_dic in body_backend_os_fail_list_html %}
+        {% for item_fail in item_fail_dic %}
+        {% if item_fail == "null_linux_fail_dic" %}
+        <tr class="failClass">
+            <td>{{item_fail_dic[item_fail].component_html}}</td>
+            <td>{{item_fail_dic[item_fail].test_case_html}}</td>
+            <td>{{item_fail_dic[item_fail].note_html}}</td>
+        </tr>
+        {% endif %}
+        {% endfor %}
+        {% endfor %}
+    </table>
+    {% for item_result_count_dic in backend_os_result_count_list_html %}
+    {% for item_result_count in item_result_count_dic %}
+    {% if (item_result_count == "openvino_linux_result_count_html") and (item_result_count_dic[item_result_count].split("/")[0] != item_result_count_dic[item_result_count].split("/")[1]) %}
+    <h4>openvino</h4>
+    <table id="result_table_linux_openvino">
+        <colgroup>
+            <col align="left" />
+            <col align="right" />
+            <col align="right" />
+            <col align="right" />
+            <col align="right" />
+            <col align="right" />
+        </colgroup>
+        <tr id="header_row_linux_openvino">
+            <td>Component</td>
+            <td>TestCase</td>
+            <td>Note</td>
+        </tr>
+        {% endif %}
+        {% endfor %}
+        {% endfor %}
+        {% for item_fail_dic in body_backend_os_fail_list_html %}
+        {% for item_fail in item_fail_dic %}
+        {% if item_fail == "openvino_linux_fail_dic" %}
+        <tr class="failClass">
+            <td>{{item_fail_dic[item_fail].component_html}}</td>
+            <td>{{item_fail_dic[item_fail].test_case_html}}</td>
+            <td>{{item_fail_dic[item_fail].note_html}}</td>
+        </tr>
+        {% endif %}
+        {% endfor %}
+        {% endfor %}
+    </table>
+    {% for item_result_count_dic in backend_os_result_count_list_html %}
+    {% for item_result_count in item_result_count_dic %}
+    {% if (item_result_count == "onednn_linux_result_count_html") and (item_result_count_dic[item_result_count].split("/")[0] != item_result_count_dic[item_result_count].split("/")[1]) %}
+    <h4>onednn</h4>
+    <table id="result_table_linux_onednn">
+        <colgroup>
+            <col align="left" />
+            <col align="right" />
+            <col align="right" />
+            <col align="right" />
+            <col align="right" />
+            <col align="right" />
+        </colgroup>
+        <tr id="header_row_linux_onednn">
+            <td>Component</td>
+            <td>TestCase</td>
+            <td>Note</td>
+        </tr>
+        {% endif %}
+        {% endfor %}
+        {% endfor %}
+        {% for item_fail_dic in body_backend_os_fail_list_html %}
+        {% for item_fail in item_fail_dic %}
+        {% if item_fail == "onednn_linux_fail_dic" %}
+        <tr class="failClass">
+            <td>{{item_fail_dic[item_fail].component_html}}</td>
+            <td>{{item_fail_dic[item_fail].test_case_html}}</td>
+            <td>{{item_fail_dic[item_fail].note_html}}</td>
+        </tr>
+        {% endif %}
+        {% endfor %}
+        {% endfor %}
+    </table>
+    {% for item_result_count_dic in backend_os_result_count_list_html %}
+    {% for item_result_count in item_result_count_dic %}
+    {% if (item_result_count == "xnnpack_linux_result_count_html") and (item_result_count_dic[item_result_count].split("/")[0] != item_result_count_dic[item_result_count].split("/")[1]) %}
+    <h4>xnnpack</h4>
+    <table id="result_table_linux_xnnpack">
+        <colgroup>
+            <col align="left" />
+            <col align="right" />
+            <col align="right" />
+            <col align="right" />
+            <col align="right" />
+            <col align="right" />
+        </colgroup>
+        <tr id="header_row_linux_xnnpack">
+            <td>Component</td>
+            <td>TestCase</td>
+            <td>Note</td>
+        </tr>
+        {% endif %}
+        {% endfor %}
+        {% endfor %}
+        {% for item_fail_dic in body_backend_os_fail_list_html %}
+        {% for item_fail in item_fail_dic %}
+        {% if item_fail == "xnnpack_linux_fail_dic" %}
+        <tr class="failClass">
+            <td>{{item_fail_dic[item_fail].component_html}}</td>
+            <td>{{item_fail_dic[item_fail].test_case_html}}</td>
+            <td>{{item_fail_dic[item_fail].note_html}}</td>
+        </tr>
+        {% endif %}
+        {% endfor %}
+        {% endfor %}
+    </table>
+    <br></br>
+    <h3>Windows Failure</h3>
+    {% for item_result_count_dic in backend_os_result_count_list_html %}
+    {% for item_result_count in item_result_count_dic %}
+    {% if (item_result_count == "null_win_result_count_html") and (item_result_count_dic[item_result_count].split("/")[0] != item_result_count_dic[item_result_count].split("/")[1]) %}
+    <h4>null</h4>
+    <table id="result_table_windows_null">
+        <colgroup>
+            <col align="left" />
+            <col align="right" />
+            <col align="right" />
+            <col align="right" />
+            <col align="right" />
+            <col align="right" />
+        </colgroup>
+        <tr id="header_row_windows_null">
+            <td>Component</td>
+            <td>TestCase</td>
+            <td>Note</td>
+        </tr>
+        {% endif %}
+        {% endfor %}
+        {% endfor %}
+        {% for item_fail_dic in body_backend_os_fail_list_html %}
+        {% for item_fail in item_fail_dic %}
+        {% if item_fail == "null_win_fail_dic" %}
+        <tr class="failClass">
+            <td>{{item_fail_dic[item_fail].component_html}}</td>
+            <td>{{item_fail_dic[item_fail].test_case_html}}</td>
+            <td>{{item_fail_dic[item_fail].note_html}}</td>
+        </tr>
+        {% endif %}
+        {% endfor %}
+        {% endfor %}
+    </table>
+    {% for item_result_count_dic in backend_os_result_count_list_html %}
+    {% for item_result_count in item_result_count_dic %}
+    {% if (item_result_count == "openvino_win_result_count_html") and (item_result_count_dic[item_result_count].split("/")[0] != item_result_count_dic[item_result_count].split("/")[1]) %}
+    <h4>openvino</h4>
+    <table id="result_table_windows_openvino">
+        <colgroup>
+            <col align="left" />
+            <col align="right" />
+            <col align="right" />
+            <col align="right" />
+            <col align="right" />
+            <col align="right" />
+        </colgroup>
+        <tr id="header_row_windows_openvino">
+            <td>Component</td>
+            <td>TestCase</td>
+            <td>Note</td>
+        </tr>
+        {% endif %}
+        {% endfor %}
+        {% endfor %}
+        {% for item_fail_dic in body_backend_os_fail_list_html %}
+        {% for item_fail in item_fail_dic %}
+        {% if (item_fail == "openvino_win_fail_dic") %}
+        <tr class="failClass">
+            <td>{{item_fail_dic[item_fail].component_html}}</td>
+            <td>{{ item_fail_dic[item_fail].test_case_html}}</td>
+            <td>{{item_fail_dic[item_fail].note_html}}</td>
+        </tr>
+        {% endif %}
+        {% endfor %}
+        {% endfor %}
+    </table>
+    {% for item_result_count_dic in backend_os_result_count_list_html %}
+    {% for item_result_count in item_result_count_dic %}
+    {% if (item_result_count == "onednn_win_result_count_html") and (item_result_count_dic[item_result_count].split("/")[0] != item_result_count_dic[item_result_count].split("/")[1]) %}
+    <h4>onednn</h4>
+    <table id="result_table_windows_onednn">
+        <colgroup>
+            <col align="left" />
+            <col align="right" />
+            <col align="right" />
+            <col align="right" />
+            <col align="right" />
+            <col align="right" />
+        </colgroup>
+        <tr id="header_row_windows_onednn">
+            <td>Component</td>
+            <td>TestCase</td>
+            <td>Note</td>
+        </tr>
+        {% endif %}
+        {% endfor %}
+        {% endfor %}
+        {% for item_fail_dic in body_backend_os_fail_list_html %}
+        {% for item_fail in item_fail_dic %}
+        {% if item_fail == "onednn_win_fail_dic" %}
+        <tr class="failClass">
+            <td>{{item_fail_dic[item_fail].component_html}}</td>
+            <td>{{item_fail_dic[item_fail].test_case_html}}</td>
+            <td>{{item_fail_dic[item_fail].note_html}}</td>
+        </tr>
+        {% endif %}
+        {% endfor %}
+        {% endfor %}
+    </table>
+    {% for item_result_count_dic in backend_os_result_count_list_html %}
+    {% for item_result_count in item_result_count_dic %}
+    {% if (item_result_count == "dml_win_result_count_html") and (item_result_count_dic[item_result_count].split("/")[0] != item_result_count_dic[item_result_count].split("/")[1]) %}
+    <h4>dml</h4>
+    <table id="result_table_windows_dml">
+        <colgroup>
+            <col align="left" />
+            <col align="right" />
+            <col align="right" />
+            <col align="right" />
+            <col align="right" />
+            <col align="right" />
+        </colgroup>
+        <tr id="header_row_windows_dml">
+            <td>Component</td>
+            <td>TestCase</td>
+            <td>Note</td>
+        </tr>
+        {% endif %}
+        {% endfor %}
+        {% endfor %}
+        {% for item_fail_dic in body_backend_os_fail_list_html %}
+        {% for item_fail in item_fail_dic %}
+        {% if item_fail == "dml_win_fail_dic" %}
+        <tr class="failClass">
+            <td>{{item_fail_dic[item_fail].component_html}}</td>
+            <td>{{item_fail_dic[item_fail].test_case_html}}</td>
+            <td>{{item_fail_dic[item_fail].note_html}}</td>
+        </tr>
+        {% endif %}
+        {% endfor %}
+        {% endfor %}
+    </table>
+    <script language="javascript" type="text/javascript">
+    </script>
+</body>
+</html>

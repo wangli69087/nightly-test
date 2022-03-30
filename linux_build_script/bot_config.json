@@ -1,0 +1,25 @@
+{
+  "target-os": "",
+  "target-cpu": "",
+  "gnArgs": {
+    "is-clang": true,
+    "is-component": false,
+    "is-debug": false,
+    "backend": "null"
+  },
+  "clean-build": true,
+  "logging": {
+    "level": "info"
+  },
+  "archive-server": {
+    "host": "",
+    "dir": "",
+    "ssh-user": ""
+  },
+  "email-service": {
+    "user": "",
+    "host": "",
+    "from": "",
+    "to": ""
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "name": "nightly-test",
+  "version": "0.1.0",
+  "description": "nightly-test is an auto test framework.",
+  "main": "./src/main.js",
+  "scripts": {
+    "lint": "eslint . --ext .js",
+    "test": "node ./src/main.js"
+  },
+  "author": "WebNN-native Authors",
+  "license": "Apache-2.0",
+  "dependencies": {
+    "cheerio": "*",
+    "emailjs": "^3.4.0",
+    "eslint": "^7.23.0",
+    "eslint-config-google": "^0.14.0",
+    "fast-csv": "^4.3.6",
+    "fs-extra": "^9.1.0",
+    "tar": "^6.1.0",
+    "winston": "^3.3.3"
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "name": "build_webnn",
+  "version": "0.0.1",
+  "description": "Build webnn-native.",
+  "main": "index.js",
+  "scripts": {
+    "sync": "node bin/build sync",
+    "build": "node bin/build build",
+    "linter": "node tools/linter.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/otcshare/webnn-native"
+  },
+  "keywords": [
+    "WebNN"
+  ],
+  "author": "WebNN Team",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/otcshare/webnn-native/issues"
+  },
+  "homepage": "https://github.com/otcshare/webnn-native#readme",
+  "dependencies": {
+    "commander": "^7.0.0",
+    "emailjs": "^3.4.0",
+    "fs-extra": "^9.1.0",
+    "winston": "^3.3.3"
+  },
+  "devDependencies": {
+    "eslint": "^7.18.0",
+    "eslint-config-google": "^0.14.0",
+    "eslint-plugin-header": "^3.1.0",
+    "recursive-readdir": "^2.2.2"
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "target-os": "",
+  "target-cpu": "",
+  "gnArgs": {
+    "is-clang": true,
+    "is-component": false,
+    "is-debug": false,
+    "backend": "openvino"
+  },
+  "clean-build": true,
+  "logging": {
+    "level": "debug"
+  },
+  "archive-server": {
+    "host": "powerbuilder",
+    "dir": "/home/webnn/project/webnn-native/nightly",
+    "ssh-user": "webnn"
+  },
+  "email-service": {
+    "user": "builder",
+    "host": "smtp.intel.com",
+    "from": "feng.dai@intel.com",
+    "to": "feng.dai@intel.com, li1x.wang@intel.com"
+  }
+}
