@@ -1,0 +1,15 @@
+{
+  "build_url": "http://powerbuilder.sh.intel.com/project/webnn-native/nightly/",
+  "target_commitId": "latest",
+  "target_backend": ["null", "openvino", "dml"],
+  "test_device": {
+    "name": "build_machine_windows",
+    "os": "win",
+    "cpu": "x64"
+  },
+  "report_server": {
+    "user_host": "http://nntester.sh.intel.com/",
+    "dir": "/project/nightly_reports"
+  },
+  "log_level": "info"
+}
